@@ -9,6 +9,8 @@ const { glob } = require("glob");
 const PG = promisify(glob);
 const Ascii = require("ascii-table");
 const { DiscordTogether } = require('discord-together');
+require("dotenv").config();
+console.log(process.env.BOT_TOKEN);
 client.discordTogether = new DiscordTogether(client); 
 
 
@@ -21,4 +23,4 @@ client.commands = new Collection();
 // require("./Handlers/Events")(client);
 // require("./Handlers/Commands")(client);
 
-client.login(Token);
+client.login(process.env.BOT_TOKEN);
